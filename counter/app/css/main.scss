@@ -1,0 +1,33 @@
+// -------------------------------------
+//   susy setting
+// -------------------------------------
+@import "susy";
+
+// -------------------------------------
+//   common
+// -------------------------------------
+@import 'common';
+
+// Style
+.main-wrap {
+  margin: 10px auto;
+  padding: 20px 10px 20px;
+  width: 150px;
+  border: 1px solid #CCC;
+  text-align: center;
+}
+h1 {
+  font-size: 70px;
+  line-height: 70px;
+  margin-bottom: 10px
+}
+.btns button {
+  margin: 0 5px;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none
+}
