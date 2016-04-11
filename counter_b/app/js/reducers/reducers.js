@@ -5,8 +5,6 @@ import * as Types from 'actions/actionTypes';
 let initialState = Immutable.List.of(0);
 
 const counter = (state = initialState, action) => {
-  // console.log('a');
-  // console.log(state);
   switch (action.type) {
     case Types.COUNTER_INCREASE:
       return state.set(action.index, state.get(action.index) + 1);
