@@ -8,7 +8,7 @@ I'm lazy removing useless packages or settings in this webpack developing packag
 ## Demo
  * counter_a - A extreme simple Redux example.
  * counter_b - Add immutable.js.
- * counter_c - Add 'redux-logger' by use applyMiddleware.
+ * counter_c - Add 'redux-logger' by use applyMiddleware.  
  ... to be contiuned.
 
 ## How to demo

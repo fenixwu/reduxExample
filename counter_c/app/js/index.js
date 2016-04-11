@@ -4,19 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import App from 'containers/App';
 import Reducers from 'reducers/reducers';
-import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
+import logger from 'redux-logger';
 
-const middlewares = [thunk];
+const createStoreWithMiddleware = compose(
+  applyMiddleware(logger())
+)(createStore);
 
-if (process.env.NODE_ENV === `development`) {
-  middlewares.push(createLogger());
-}
-
-const store = compose(
-  applyMiddleware.apply(this, middlewares)
-)(createStore)(Reducers);
-
+const store = createStoreWithMiddleware(Reducers, {});
 
 ReactDom.render(
   <Provider store={ store }>

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import Immutable from 'immutable';
 import * as Types from 'actions/actionTypes';
 
-let initialState = Immutable.List.of(0);
+const initialState = Immutable.List.of(0);
 
 const counter = (state = initialState, action) => {
   switch (action.type) {
