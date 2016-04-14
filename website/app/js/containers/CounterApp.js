@@ -1,7 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { counterIncrease, counterDecrease, addCounter, removeCounter } from 'actions/actions';
+import {
+  counterIncrease,
+  counterDecrease,
+  addCounter,
+  removeCounter,
+  getInitialApi,
+} from 'actions/actions';
 import Counter from 'components/Counter';
 import { Link } from 'react-router';
 
@@ -37,7 +43,10 @@ class CounterApp extends React.Component {
  * @param  {object} state store.getState()
  * @return {object}       props
  */
-const mapStateToProps = (state) => ({ counter: state.counter });
+const mapStateToProps = (state) => ({
+  counter: state.counter,
+  api: state.api,
+});
 
 /**
  * 將 action creator 加上 dispatch，一樣用 props 的方式傳給 App
@@ -51,6 +60,7 @@ const mapDispatchToProps = (dispatch) => ({
     counterDecrease,
     addCounter,
     removeCounter,
+    getInitialApi,
   }, dispatch),
 });
 

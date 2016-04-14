@@ -25,3 +25,7 @@ export const removeCounter = (index) => ({
   type: types.REMOVE_COUNTER,
   index,
 });
+
+export const getInitialApi = () => ({
+  type: types.GET_INITIAL_API,
+});

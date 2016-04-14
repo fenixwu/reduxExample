@@ -1,4 +1,5 @@
 import Immutable from 'immutable';
+import { getJSON } from 'utils/requestApi';
 import * as Types from 'actions/actionTypes';
 
 const initialState = Immutable.List.of(0);
@@ -20,6 +21,24 @@ export const counter = (state = initialState, action) => {
 
 export const counterFilter = (state = Immutable.List.of(), action) => {
   switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export const requestApi = (state = Immutable.fromJS({}), action) => {
+  switch (action.type) {
+    case Types.GET_INITIAL_API:
+      getJSON('/test').then((cb) => {
+        // Call API & return success
+        if (cb && cb.success === true) {
+          return state.update(cb.message);
+        }
+      }, () => {
+        // Request API error
+        alert('Request API error');
+      });
+      break;
     default:
       return state;
   }
