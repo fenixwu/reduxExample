@@ -19,6 +19,7 @@ const counter = (state = initialState, action) => {
   }
 };
 
+// This reducer is useless, just to see if combineReducers working normally.
 const counterFilter = (state = Immutable.List.of(), action) => {
   switch (action.type) {
     default:

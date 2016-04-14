@@ -3,10 +3,6 @@ import CounterBtns from 'components/CounterBtns';
 import Monitor from 'components/Monitor';
 
 export default class App extends React.Component {
-  constructor (props) {
-    super(props);
-  }
-
   render () {
     let counters = this.props.counter.map((counter, index) =>
       <div key={ index } className="counter">
