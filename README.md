@@ -10,6 +10,7 @@ I'm lazy removing useless packages or settings in this webpack developing packag
  * counter_b - Add immutable.js.
  * counter_c - Add 'redux-logger' by use applyMiddleware.  
  * counter_d - Add 'Redux devTools Extension'.  
+ * website   - Add 'router'.  
  ... to be contiuned.
 
 ## How to demo

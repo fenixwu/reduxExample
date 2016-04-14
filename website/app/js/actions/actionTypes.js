@@ -1,0 +1,10 @@
+/**
+ * 定義常數
+ * 多人協作時較容易追蹤新增了哪些東西
+ */
+
+// actions
+export const COUNTER_INCREASE = 'COUNTER_INCREASE';
+export const COUNTER_DECREASE = 'COUNTER_DECREASE';
+export const ADD_COUNTER = 'ADD_COUNTER';
+export const REMOVE_COUNTER = 'REMOVE_COUNTER';

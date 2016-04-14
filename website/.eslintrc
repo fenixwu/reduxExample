@@ -1,0 +1,22 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jquery": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "prefer-const": [2, {"destructuring": "any"}],
+    "func-names": 0,
+    "consistent-return": 0,
+    "react/prop-types": 0,
+    "react/prefer-stateless-function": 1,
+    "react/jsx-no-bind": [1, {"allowBind": true}],
+  }
+}
