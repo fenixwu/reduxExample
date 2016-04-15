@@ -1,12 +1,17 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import logger from 'redux-logger';
+import requestApiMiddleware from 'middlewares/requestApiMiddleware';
 import rootReducer from 'reducers/index';
 
+const middleware = [
+  requestApiMiddleware,
+  logger(),
+];
+
 const createStoreWithMiddleware = compose(
-  applyMiddleware(logger()),
+  applyMiddleware(...middleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
-
 export default function configureStore(history, initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
 
@@ -18,6 +23,5 @@ export default function configureStore(history, initialState) {
       store.replaceReducer(nextReducers);
     });
   }
-
   return store;
 }

@@ -6,7 +6,6 @@ import {
   counterDecrease,
   addCounter,
   removeCounter,
-  getInitialApi,
 } from 'actions/actions';
 import Counter from 'components/Counter';
 import { Link } from 'react-router';
@@ -37,30 +36,16 @@ class CounterApp extends React.Component {
   }
 }
 
-/**
- * 將 redux 的 state(store.getState()) filter 出 App 需要的部份並用 props 傳給 App
- * 因此在 APP 可用 this.props.state 取得 store.getState().state
- * @param  {object} state store.getState()
- * @return {object}       props
- */
 const mapStateToProps = (state) => ({
   counter: state.counter,
-  api: state.api,
 });
 
-/**
- * 將 action creator 加上 dispatch，一樣用 props 的方式傳給 App
- * 因此在 APP 可用 this.props.actions.counterIncrease 取得 dispatch(ActionsCreators.counterIncrease(...))
- * @param  {object} dispatch function dispatch(...)
- * @return {object}          props
- */
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({
     counterIncrease,
     counterDecrease,
     addCounter,
     removeCounter,
-    getInitialApi,
   }, dispatch),
 });
 

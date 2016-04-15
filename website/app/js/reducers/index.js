@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { counter, counterFilter, requestApi } from 'reducers/reducers';
+import {
+  counter,
+  initialApi,
+} from 'reducers/reducers';
 
 const rootReducer = combineReducers({
   routing: routerReducer,
   counter,
-  counterFilter,
-  requestApi,
+  initialApi,
 });
 
 export default rootReducer;
