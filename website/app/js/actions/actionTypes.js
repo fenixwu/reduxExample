@@ -3,12 +3,13 @@
  * 多人協作時較容易追蹤新增了哪些東西
  */
 
-// actions
+// Counter
 export const COUNTER_INCREASE = 'COUNTER_INCREASE';
 export const COUNTER_DECREASE = 'COUNTER_DECREASE';
 export const ADD_COUNTER = 'ADD_COUNTER';
 export const REMOVE_COUNTER = 'REMOVE_COUNTER';
 
-export const GET_INITIAL_API_REQUEST = 'GET_INITIAL_API_REQUEST';
-export const GET_INITIAL_API_SUCCESS = 'GET_INITIAL_API_SUCCESS';
-export const GET_INITIAL_API_ERROR = 'GET_INITIAL_API_ERROR';
+// Call Api
+export const REQUEST_API = 'REQUEST_API';
+export const REQUEST_API_SUCCESS = 'REQUEST_API_SUCCESS';
+export const REQUEST_API_ERROR = 'REQUEST_API_ERROR';

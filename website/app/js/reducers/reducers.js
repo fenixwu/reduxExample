@@ -1,9 +1,7 @@
 import Immutable from 'immutable';
 import * as Types from 'actions/actionTypes';
 
-const initialState = Immutable.List.of(0);
-
-export const counter = (state = initialState, action) => {
+export const counter = (state = Immutable.List.of(0), action) => {
   switch (action.type) {
     case Types.COUNTER_INCREASE:
       return state.set(action.index, state.get(action.index) + 1);
@@ -24,22 +22,22 @@ const initialApiState = Immutable.fromJS({
   apiData: {},
 });
 
-export const initialApi = (state = initialApiState, action) => {
+export const api = (state = initialApiState, action) => {
   switch (action.type) {
-    case Types.GET_INITIAL_API:
+    case Types.REQUEST_API:
       return state.set('apiReady', false);
-    case Types.GET_INITIAL_API_SUCCESS:
+    case Types.REQUEST_API_SUCCESS:
       return state.withMutations((obj) => {
         obj
-         .set('apiReady', true)
-         .set('apiError', false)
-         .set('apiData', action.apiData);
+          .set('apiReady', true)
+          .set('apiError', false)
+          .set('apiData', action.payload);
       });
-    case Types.GET_INITIAL_API_ERROR:
+    case Types.REQUEST_API_ERROR:
       return state.withMutations((obj) => {
         obj
-         .set('apiReady', true)
-         .set('apiError', true);
+          .set('apiReady', true)
+          .set('apiError', true);
       });
     default:
       return state;

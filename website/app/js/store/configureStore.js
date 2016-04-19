@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import logger from 'redux-logger';
-import requestApiMiddleware from 'middlewares/requestApiMiddleware';
+import Logger from 'redux-logger';
 import rootReducer from 'reducers/index';
+import callApiMiddleware from 'middlewares/callApiMiddleware';
 
 const middleware = [
-  requestApiMiddleware,
-  logger(),
+  callApiMiddleware,
+  Logger(),
 ];
 
 const createStoreWithMiddleware = compose(

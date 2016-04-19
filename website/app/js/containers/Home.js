@@ -1,17 +1,17 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getInitialApiRequest } from 'actions/actions';
+import { requestApi } from 'actions/actions';
 
 class home extends React.Component {
   componentDidMount() {
-    const { actions } = this.props;
-
-    actions.getInitialApiRequest();
+    this.props.actions.requestApi({
+      method: 'get',
+      path: '/test',
+    });
   }
-
   render() {
-    const { apiReady, apiError, apiData } = this.props.initialApi.toObject();
+    const { apiReady, apiError, apiData } = this.props.api.toObject();
 
     return (
       <div>
@@ -24,12 +24,12 @@ class home extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  initialApi: state.initialApi,
+  api: state.api,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({
-    getInitialApiRequest,
+    requestApi,
   }, dispatch),
 });
 
