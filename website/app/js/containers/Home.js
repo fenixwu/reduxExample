@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { requestApi } from 'actions/actions';
+import { requestApi } from 'actions/api';
 
 class home extends React.Component {
   componentDidMount() {

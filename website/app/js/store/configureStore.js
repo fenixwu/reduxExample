@@ -1,17 +1,28 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import Logger from 'redux-logger';
-import rootReducer from 'reducers/index';
-import callApiMiddleware from 'middlewares/callApiMiddleware';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import logger from 'redux-logger';
+import apiMiddleware from 'middlewares/apiMiddleware';
+import { routerReducer } from 'react-router-redux';
+import { counter, api } from 'reducers/index';
 
+// 合併所有 Reducer
+const rootReducer = combineReducers({
+  routing: routerReducer,
+  counter,
+  api,
+});
+
+// 將所有 Middleware 統一放入陣列
 const middleware = [
-  callApiMiddleware,
-  Logger(),
+  apiMiddleware,
+  logger(),
 ];
 
+// 將所有Middleware合併
 const createStoreWithMiddleware = compose(
   applyMiddleware(...middleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
+
 export default function configureStore(history, initialState) {
   const store = createStoreWithMiddleware(rootReducer, initialState);
 

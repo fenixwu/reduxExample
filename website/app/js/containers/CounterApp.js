@@ -6,7 +6,7 @@ import {
   counterDecrease,
   addCounter,
   removeCounter,
-} from 'actions/actions';
+} from 'actions/counter';
 import Counter from 'components/Counter';
 import { Link } from 'react-router';
 
@@ -30,7 +30,7 @@ class CounterApp extends React.Component {
           actions={ actions }
           counter={ counter }
         />
-        <Link to="/about"><span className="link">關於我</span></Link>
+        <Link to="/about"><span className="link">About</span></Link>
       </div>
       );
   }

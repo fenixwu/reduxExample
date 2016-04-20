@@ -1,14 +1,2 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import {
-  counter,
-  api,
-} from 'reducers/reducers';
-
-const rootReducer = combineReducers({
-  routing: routerReducer,
-  counter,
-  api,
-});
-
-export default rootReducer;
+export { default as counter } from 'reducers/counter';
+export { default as api } from 'reducers/api';
