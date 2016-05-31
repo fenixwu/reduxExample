@@ -11,13 +11,13 @@ class home extends React.Component {
     });
   }
   render() {
-    const { apiReady, apiError, apiData } = this.props.api.toObject();
+    const { apiReady, apiError, apiData } = this.props.api;
 
     return (
       <div>
         {!apiReady && <p>Loading data...</p>}
         {apiError && <p>Loading data ERROR.</p>}
-        <p>{apiData.message}</p>
+        <p>{apiReady && apiData.message}</p>
       </div>
     );
   }
