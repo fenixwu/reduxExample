@@ -1,4 +1,4 @@
-import * as Types from 'actions/actionTypes';
+import * as Types from '../actions/actionTypes';
 
 const initialApiState = {
   apiReady: false,

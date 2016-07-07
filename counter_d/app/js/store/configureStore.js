@@ -4,7 +4,7 @@ import Reducers from 'reducers/index';
 
 const createStoreWithMiddleware = compose(
   applyMiddleware(logger()),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  global.devToolsExtension ? global.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(initialState) {

@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import logger from 'redux-logger';
-import apiMiddleware from 'middlewares/apiMiddleware';
+import apiMiddleware from '../middlewares/apiMiddleware';
 import { routerReducer } from 'react-router-redux';
-import { counter, api } from 'reducers/index';
+import { counter, api } from '../reducers/index';
 
 // 合併所有 Reducer
 const rootReducer = combineReducers({
@@ -20,7 +20,7 @@ const middleware = [
 // 將所有Middleware合併
 const createStoreWithMiddleware = compose(
   applyMiddleware(...middleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  global.devToolsExtension ? global.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(history, initialState) {

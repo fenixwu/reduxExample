@@ -20,7 +20,7 @@ const middleware = [
 // 將所有Middleware合併
 const createStoreWithMiddleware = compose(
   applyMiddleware(...middleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  global.devToolsExtension ? global.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(history, initialState) {
